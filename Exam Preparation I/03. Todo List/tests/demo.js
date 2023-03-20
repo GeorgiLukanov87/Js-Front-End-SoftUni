@@ -1,0 +1,6 @@
+
+
+
+
+
+// simple validator of password
