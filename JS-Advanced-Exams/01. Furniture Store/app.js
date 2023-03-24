@@ -23,18 +23,18 @@ function solve() {
             data.price < 0 || data.year < 0) {
             alert('Missing data or year/price must be positive number');
         }
-        
+
         let trInfo = customHTMLelement('tr', '', 'info');
         customHTMLelement('td', data.model, '', trInfo);
         customHTMLelement('td', data.price.toFixed(2), '', trInfo);
 
         let btnsContainer = document.createElement('td');
         let moreBtn = customHTMLelement('button', 'More Info', 'moreBtn');
-        moreBtn.addEventListener('click', moreInfo)
-        btnsContainer.appendChild(moreBtn)
+        moreBtn.addEventListener('click', moreInfo);
+        btnsContainer.appendChild(moreBtn);
         let buyBtn = customHTMLelement('button', 'Buy it', 'buyBtn');
-        buyBtn.addEventListener('click', buyIt)
-        btnsContainer.appendChild(buyBtn)
+        buyBtn.addEventListener('click', buyIt);
+        btnsContainer.appendChild(buyBtn);
 
         trInfo.appendChild(btnsContainer);
         furniteListElement.appendChild(trInfo);
@@ -53,7 +53,6 @@ function solve() {
         let hideTrSibling = moreInfoBtn.parentNode.parentNode.nextElementSibling;
         if (moreInfoBtn.textContent == 'More Info') {
             moreInfoBtn.textContent = 'Less Info';
-            console.log(hideTrSibling)
             hideTrSibling.style.display = 'contents';
         } else {
             moreInfoBtn.textContent = 'More Info';
@@ -74,7 +73,7 @@ function solve() {
         if (extraInfo) {
             newElement.textContent = `${extraInfo}: ${content}`;
         } else {
-            newElement.textContent = content
+            newElement.textContent = content;
         }
         if (className) {
             newElement.classList.add(className);
