@@ -20,7 +20,7 @@ function solve() {
             dateIn.value == '' ||
             dateOut.value == '' ||
             people.value == '')) {
-            console.log('fail')
+            alert('Fill all inputs!')
             return;
         }
         let x = new Date(dateIn.value);
@@ -78,7 +78,6 @@ function solve() {
         continueBtn.addEventListener('click', continueHandler);
 
         function editHandler(e) {
-            console.log('edit')
             firstName.value = SavedData['firstName'];
             lastName.value = SavedData['lastName'];
             dateIn.value = SavedData['dateIn'];
@@ -89,7 +88,6 @@ function solve() {
         }
 
         function continueHandler() {
-            console.log('continue')
             reservationInfo.innerHTML = '';
 
             confirmReservation.appendChild(newLi);
@@ -114,20 +112,18 @@ function solve() {
             nextBtn.disabled = false;
             h1.textContent = 'Confirmed.'
             h1.setAttribute('class', 'reservation-confirmed');
-            confirmReservation.remove();
+            Array.from(confirmReservation.querySelectorAll('li')).forEach(li => { li.remove() })
         }
         function cancelHandler() {
             nextBtn.disabled = false;
             h1.textContent = 'Calcelled.'
             h1.setAttribute('class', 'reservation-cancelled');
-            confirmReservation.remove();
+            Array.from(confirmReservation.querySelectorAll('li')).forEach(li => { li.remove() })
         }
 
     }
 
 }
-
-
 
 
 
